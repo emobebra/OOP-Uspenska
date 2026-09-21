@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace lab3v3
@@ -83,21 +83,18 @@ namespace lab3v3
                 stream1.Send("тест");
             }
 
-            Console.WriteLine();
             Console.WriteLine("2. явний виклик dispose()");
             var stream2 = new NetworkStream("192.168.0.2");
             stream2.Send("тест");
             stream2.Dispose();
             stream2.Send("тест 2");
 
-            Console.WriteLine();
             Console.WriteLine("3. без dispose(), працює деструктор");
             CreateWithoutDispose();
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
 
-            Console.WriteLine();
             Console.WriteLine("кінець програми");
         }
 
