@@ -31,7 +31,7 @@ namespace lab3v3
         {
             _address = address;
             _isStreamOpen = true;
-            Console.WriteLine($"Потік до {_address} відкрито");
+            Console.WriteLine($"потік до {_address} відкрито");
         }
 
         // Надсилання даних працює тільки поки потік відкритий
@@ -39,11 +39,11 @@ namespace lab3v3
         {
             if (_isStreamOpen)
             {
-                Console.WriteLine($"Надіслано на {_address}: {data}");
+                Console.WriteLine($"надіслано на {_address}: {data}");
             }
             else
             {
-                Console.WriteLine("Потік закрито, надсилання неможливе");
+                Console.WriteLine("потік закрито, надсилання неможливе");
             }
         }
 
@@ -56,13 +56,13 @@ namespace lab3v3
                 if (disposing)
                 {
                     // Тут звільняються керовані ресурси
-                    Console.WriteLine("Звільняємо керовані ресурси");
+                    Console.WriteLine("звільняємо керовані ресурси");
                 }
 
                 // Некерований ресурс звільняємо в будь-якому випадку
                 if (_isStreamOpen)
                 {
-                    Console.WriteLine($"Закриваємо потік до {_address}");
+                    Console.WriteLine($"закриваємо потік до {_address}");
                     _isStreamOpen = false;
                 }
 
@@ -82,7 +82,7 @@ namespace lab3v3
         // Деструктор - запасний варіант, якщо забули викликати Dispose()
         ~NetworkStream()
         {
-            Console.WriteLine("Викликано деструктор");
+            Console.WriteLine("викликано деструктор");
             Dispose(false);
         }
     }
@@ -91,10 +91,10 @@ namespace lab3v3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- 1. Через using ---");
+            Console.WriteLine("1. через using");
             using (var stream1 = new NetworkStream("192.168.0.1"))
             {
-                stream1.Send("Привіт");
+                stream1.Send("тест");
             }
             // Dispose() викликається автоматично при виході з блоку
 
