@@ -63,9 +63,11 @@ namespace lab2v3
         {
             Student student1 = new Student("Проха Роман", "РВ-148578", 20.5);
             Student student2 = new Student("Ніколаєв Максим", "РВ-102938", 91.5);
-            Student student3 = new Student("Федчук Ангеліна", "РВ-554433", 65.0);
+            Student student3 = new Student();
 
-            Console.WriteLine($"{student1.GetStudentCard()}  {student2.GetStudentCard()}  {student3.GetStudentCard()}");
+            Console.WriteLine(student1.GetStudentCard());
+            Console.WriteLine(student2.GetStudentCard());
+            Console.WriteLine(student3.GetStudentCard());
         }
     }
 }
