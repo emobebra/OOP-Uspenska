@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 namespace lab3v3
+
 {
     public class NetworkStream : IDisposable
     {
