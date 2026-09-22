@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 
-namespace lab1
+namespace lab1v1
 {
-    //варіант 3
     public class Student
     {
         private string name;
