@@ -1,6 +1,7 @@
 using System;
 
 namespace lab2v3
+
 {
 
     public class Student
