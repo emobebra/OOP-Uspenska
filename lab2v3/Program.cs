@@ -1,110 +1,70 @@
 using System;
-using System.Runtime.CompilerServices;
 
-namespace lab3v3
-
+namespace lab2v3
 {
-    public class NetworkStream : IDisposable
+
+    public class Student
     {
-        private bool _disposed = false;
-        private string _address;
-        private bool _isStreamOpen;
+        private string _name = string.Empty;
+        private string _studentId = string.Empty;
+        private double _averageMark;
 
-        public string Address
+        public string Name
         {
-            get { return _address; }
+            get => _name;
+            set => _name = string.IsNullOrWhiteSpace(value) ? "Unknown" : value;
         }
 
-        public bool IsStreamOpen
+        public string StudentId
         {
-            get { return _isStreamOpen; }
+            get => _studentId;
+            set => _studentId = string.IsNullOrWhiteSpace(value) ? "N/A" : value;
         }
 
-        public NetworkStream(string address)
+        public double AverageMark
         {
-            _address = address;
-            _isStreamOpen = true;
-            Console.WriteLine($"потік до {_address} відкрито");
+            get => _averageMark;
+            set => _averageMark = (value >= 0 && value <= 100) ? value : 0.0;
         }
 
-        public void Send(string data)
+        public Student(string name, string studentId, double averageMark)
         {
-            if (_isStreamOpen)
-            {
-                Console.WriteLine($"надіслано на {_address}: {data}");
-            }
-            else
-            {
-                Console.WriteLine("потік закрито, надсилання неможливе");
-            }
+            Name = name;
+            StudentId = studentId;
+            AverageMark = averageMark;
         }
 
-        // disposing = true, якщо викликали з dispose(), і false, якщо це викликав деструктор
-        protected virtual void Dispose(bool disposing)
+        public Student() : this("New Student", "N/A", 0.0) { }
+
+        public string GetStudentCard() => $"{Name}  ID: {StudentId}  Бал: {AverageMark:F1}";
+
+        ~Student()
         {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    Console.WriteLine("звільняємо керовані ресурси");
-                }
-
-                if (_isStreamOpen)
-                {
-                    Console.WriteLine($"закриваємо потік до {_address}");
-                    _isStreamOpen = false;
-                }
-
-                _disposed = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-
-            // ресурси вже звільнені, деструктор більше не потрібен
-            GC.SuppressFinalize(this);
-        }
-
-        ~NetworkStream()
-        {
-            Console.WriteLine("викликано деструктор");
-            Dispose(false);
+            Console.WriteLine($"Деструктор: Об'єкт '{_name}' видалено з пам'яті.");
         }
     }
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("1. через using");
-            using (var stream1 = new NetworkStream("192.168.0.1"))
-            {
-                stream1.Send("тест");
-            }
+            
+            CreateStudents();
 
-            Console.WriteLine("2. явний виклик dispose()");
-            var stream2 = new NetworkStream("192.168.0.2");
-            stream2.Send("тест");
-            stream2.Dispose();
-            stream2.Send("тест 2");
-
-            Console.WriteLine("3. без dispose(), працює деструктор");
-            CreateWithoutDispose();
-
+            Console.WriteLine("\n запуск Garbage Collector");
             GC.Collect();
-            GC.WaitForPendingFinalizers();
+            GC.WaitForPendingFinalizers(); 
 
-            Console.WriteLine("кінець програми");
+            Console.WriteLine("завершення програми");
         }
 
-        // об'єкт в окремому методі, щоб на нього не лишилось посилань і gc міг його зібрати
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        static void CreateWithoutDispose()
+        static void CreateStudents()
         {
-            var stream3 = new NetworkStream("192.168.0.3");
-            stream3.Send("дані без dispose");
+            Student student1 = new Student("Проха Роман", "РВ-148578", 20.5);
+            Student student2 = new Student("Ніколаєв Максим", "РВ-102938", 91.5);
+            Student student3 = new Student("Федчук Ангеліна", "РВ-554433", 65.0);
+
+            Console.WriteLine($"{student1.GetStudentCard()}  {student2.GetStudentCard()}  {student3.GetStudentCard()}");
         }
     }
 }
