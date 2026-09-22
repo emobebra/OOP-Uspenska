@@ -28,7 +28,7 @@
 
 ## Результат роботи
 
-<img width="1179" height="550" alt="photo_1_2026-09-18_14-44-50" src="https://github.com/user-attachments/assets/964669a6-9695-4cbd-9e30-9c6ce1208cf4" />
+<img width="537" height="332" alt="1" src="https://github.com/user-attachments/assets/15f8f287-fcf2-447e-81b3-18c354abe33a" />
 
 ## **Контрольні запитання**
 **1. Що таке клас та об’єкт? Яка між ними різниця?**
