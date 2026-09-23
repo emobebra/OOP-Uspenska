@@ -58,7 +58,7 @@ namespace lab4v3
         // override замінює реалізацію virtual методу
         public override void Drive()
         {
-            Console.WriteLine($"автомобіль {Brand} ({Year}) їде дорогою, дверей: {NumDoors}.");
+            Console.WriteLine($"автомобіль {Brand} ({Year}) їде, дверей: {NumDoors}.");
         }
 
         public void OpenTrunk()
