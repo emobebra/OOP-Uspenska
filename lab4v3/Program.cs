@@ -96,7 +96,7 @@ namespace lab4v3
 
         public void Wheelie()
         {
-            Console.WriteLine($"мотоцикл {Brand} піднявся на заднє колесо!");
+            Console.WriteLine($"мотоцикл {Brand} піднявся на заднє колесо");
         }
     }
 
