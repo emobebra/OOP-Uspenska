@@ -14,7 +14,7 @@
 
 ## Результат роботи
 
-<img width="682" height="550" alt="1" src="https://github.com/user-attachments/assets/805c6c89-8322-41fc-8d30-270d548b4650" />
+<img width="687" height="515" alt="1" src="https://github.com/user-attachments/assets/72476151-d376-4ff6-97a7-768a2616a225" />
 
 ## Контрольні запитання
 
