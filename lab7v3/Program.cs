@@ -6,6 +6,7 @@ namespace lab7v3
 {
     class Program
     {
+        
         static void PrintAll(IRepository<Order> repo)
         {
             foreach (Order order in repo.GetAll())
