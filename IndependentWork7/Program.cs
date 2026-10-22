@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using IndependentWork7;
 
 Cache<string, string> cache = new Cache<string, string>(3);
