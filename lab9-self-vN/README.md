@@ -6,7 +6,7 @@
 
 ## Результат роботи
 
-<img width="1560" height="807" alt="Знімок екрана 2026-10-22 234909" src="https://github.com/user-attachments/assets/5d02f01e-29b9-4495-be0c-76ce7aaa3de3" />
+<img width="810" height="567" alt="Знімок екрана 2026-10-22 235835" src="https://github.com/user-attachments/assets/143c8cb0-2b2c-4c41-9952-3f0a266cba01" />
 
 ## Чому делегати корисні для створення таких утиліт?
 
