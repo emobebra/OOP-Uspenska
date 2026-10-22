@@ -113,8 +113,8 @@ namespace IndependentWork4
         {
             LibraryItem[] items =
             {
-                new Book("Кобзар", 1840, "B-001", "Тарас Шевченко"),
-                new Journal("Наука і життя", 2020, "J-001", 5),
+                new Book("сутінки", 2024, "B-001", "Стефені Маєр"),
+                new Journal("Forbes Ukraine", 2024, "J-001", 5),
                 new AudioBook("Тіні забутих предків", 1911, "A-001",
                     "Михайло Коцюбинський", "Богдан Ступка")
             };
