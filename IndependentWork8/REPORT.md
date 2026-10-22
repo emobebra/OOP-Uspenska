@@ -1,0 +1,47 @@
+## 1. Аналіз використання колекцій
+
+приклад 1, dictionary у .NET Runtime
+
+у бібліотеці System.Linq метод ToDictionary використовується для перетворення колекції у словник. Кожен елемент зберігається за певним ключем. Dictionary зручніший за List, коли потрібно швидко знаходити значення за ключем
+
+Середня складність пошуку та додавання O(1), для порівняння ключів можна використовувати IEqualityComparer
+
+Джерело: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Linq/src/System/Linq/ToCollection.cs
+
+приклад 2, HashSet у .NET Runtime
+
+Метод ToHashSet створює множину унікальних елементів. Цю колекцію використовують, коли потрібно уникнути повторень і швидко перевіряти наявність значень
+
+Середня складність додавання та пошуку O(1), також можна передати власний comparer для порівняння елементів
+
+Джерело: https://github.com/dotnet/runtime/blob/main/src/libraries/System.Linq/src/System/Linq/ToCollection.cs
+
+приклад 3, Dictionary і HashSet разом у Microsoft VSTest
+
+У проєкті microsoft vstest використовується dictionary<string, HashSet<string>> для зберігання інформації про знайдені розширення тестової платформи
+
+dictionary пов'язує назву категорії з набором розширень, а hashset дозволяє зберігати унікальні значення. Це зручніше за звичайні списки, оскільки забезпечує швидкий пошук і перевірку наявності елементів
+
+Середня складність пошуку за ключем і перевірки елемента O(1), для рядків за необхідності можна застосувати stringcomparer
+
+Джерело: https://github.com/microsoft/vstest/blob/main/src/Microsoft.TestPlatform.ObjectModel/Client/Events/DiscoveryCompleteEventArgs.cs?utm_source=chatgpt.com#L75-L76
+
+## 2. Практична частина
+
+я реалізувала три сценарії:
+FileMetadataCache - кеш метаданих файлів. dictionary зберігає назву файлу та інформацію про нього. реалізувала методи add, get, remove і contains
+
+tagmanager - реалізувала роботу з унікальними тегами за допомогою hashset
+
+searchindex - створила пошук документів за словами, використовуючи dictionary і hashset
+
+## 3. Порівняльна таблиця
+
+| Операція | List | Dictionary | HashSet |
+|---|---|---|---|
+| Додавання | O(1) | O(1) | O(1) |
+| Пошук за значенням | O(n) | O(n) | O(1) |
+| Пошук за ключем | Немає | O(1) | Немає |
+| Видалення | O(n) | O(1) | O(1) |
+| Перевірка наявності | O(n) | O(1) | O(1) |
+
