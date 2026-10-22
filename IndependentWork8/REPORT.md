@@ -24,7 +24,7 @@ dictionary пов'язує назву категорії з набором ро�
 
 Середня складність пошуку за ключем і перевірки елемента O(1), для рядків за необхідності можна застосувати stringcomparer
 
-Джерело: https://github.com/microsoft/vstest/blob/main/docs/Overview.md
+Джерело: https://github.com/microsoft/vstest/blob/main/src/Microsoft.TestPlatform.ObjectModel/Client/Events/DiscoveryCompleteEventArgs.cs?utm_source=chatgpt.com#L75-L76
 
 ## 2. Практична частина
 
