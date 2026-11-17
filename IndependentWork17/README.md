@@ -29,8 +29,8 @@ join об'єднує продажі з товарами та клієнтами.
 
 ## Приклад виводу програми
 
-<img width="937" height="856" alt="1" src="https://github.com/user-attachments/assets/2c2d375f-e734-4ab4-94ee-6c6332f98b54" />
-<img width="497" height="802" alt="2" src="https://github.com/user-attachments/assets/f045d9cc-68f3-4ec9-999d-932c1cb700ca" />
+<img width="792" height="767" alt="17" src="https://github.com/user-attachments/assets/ec5c63d1-981e-41fe-93df-72aa0c9aef68" />
+<img width="477" height="797" alt="17 1" src="https://github.com/user-attachments/assets/26a12e76-e122-4519-8ca7-5daba51170ce" />
 
 ## Вимірювання продуктивності
 
