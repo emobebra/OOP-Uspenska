@@ -4,4 +4,4 @@
 
 ## Приклад виводу
 
-<img width="1012" height="792" alt="image" src="https://github.com/user-attachments/assets/0e483434-aa00-405b-8f0d-a32b734be8a7" />
+<img width="1012" height="770" alt="16" src="https://github.com/user-attachments/assets/dc2e86ba-1e9d-4c21-90fe-5563f9eadf71" />
